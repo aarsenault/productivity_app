@@ -12,14 +12,16 @@ def prod_app():
     print("")
     print("Pomodoro timer and productivity tracker V.{}:".format(VERSION))
 
-    command = input("Hit 'Enter' to start 25 min work block")
+    command_loop()
 
-    if command == '':
-        work_block()
+def command_loop():
 
-    else:
-        while command not in acceptable_commands:
-            command = input("type 'work' or 'break' or 'help' for more options")
+    command = ''
+
+    while command not in acceptable_commands:
+            command = input("type 'work' or 'break' to start ('help' for more options): ")
+
+    parse_commands(command)
 
 
 
@@ -27,15 +29,15 @@ def parse_commands(command):
 
     if command == 'work':
         work_block()
-        return 0
+        return command_loop()
 
     elif command == 'break':
         ## todo break_block()
-        return 0
+        return command_loop()
 
     elif command == 'help':
         # todo help_page()
-        return 0
+        return command_loop()
 
     elif command == 'quit':
         # todo quit_pom():
@@ -50,20 +52,23 @@ def parse_commands(command):
 
 def work_block():
 
+
+
     print("")
     print ('starting work block XX')
     # sleep(1500) # - sleep for 25 mins
-    time.sleep(10)
+
+    for i in range(3):
+        os.system('afplay /System/Library/Sounds/Ping.aiff')
+        time.sleep(0.125)
+
+    time.sleep(1)
     print("")
+
+    EasyDialogs.Message
     print('sleep done')
-
-
-
-
-
-
-
-
+    # os.system('say "your work block has finished"')
+    os.system('afplay /System/Library/Sounds/Glass.aiff')
 
 
 
