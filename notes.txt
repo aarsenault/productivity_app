@@ -1,0 +1,52 @@
+
+
+######################################################################
+#Productivity App V. 0.1                                                                                   
+
+######################################################################
+
+
+
+Building this because I can't find anything exactly like it. These are the features I'd like to have in a single app
+
+### Main functions:
+
+
+
+* pomodor timer
+	* Button to tap into or out of work mode
+		* later - roll over feature
+	* When Pomodoro active - block sites via hosts
+	
+* Keeps stats on computer time 
+	* can view stats via graph 
+	* track progress 
+	* weekly reports (emailed?) 
+	
+	
+### Features:
+* Fully offline mode
+	* configured to have startup permitions
+
+	
+* GUI
+
+* Downloadable as a executable file 	
+
+
+
+
+## TODO:
+
+1) start with the pomodoro timer: 
+
+
+	opens and says welcome 
+	
+	hit enter to start a workblock 
+	work
+	start
+	break 
+	
+	(after 4 short breaks unlock long break) 
+	
