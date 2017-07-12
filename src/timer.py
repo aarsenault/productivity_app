@@ -105,6 +105,8 @@ def vertical_display(time):
 
 def display_time(time):
 
+    clear()
+
     # break down each letter into individual lines
     letter_lines = []
     for char in time:
@@ -130,7 +132,7 @@ def display_time(time):
     #     print(''.join(line))
 
 
-def countdown(time):
+def digitmaker(time):
 
     # for now assume time is minutes
 
@@ -138,7 +140,9 @@ def countdown(time):
     # convert it to a sting
     time = str(time)
 
-    if len(time)
+    if len(time) < 2:
+        # TODO throw error
+        pass
 
     if len(time) == 2:
         time = time + ':00'
@@ -146,11 +150,64 @@ def countdown(time):
     # counter
     digits = time.split(':')
 
+
+    return digits
+
+
+
+
+
+
+# for now focus on minutes and secconds
+def countdown(mins):
+
+    digits = digitmaker(mins)
+
     ld = len(digits)
 
-    if ld > 0:
-        sec
+    secconds = int(digits[ld - 1])  # last list
+    minutes = int(digits[ld - 2])
+
+    # TODO:  divide minutes into hours
+    if ld >= 3:
+        hours = digits[ld - 3]
+
+
+    # countdown
+    while True:
+        if secconds > 0:
+            secconds -= 1
+
+        elif minutes > 0:
+            minutes -= 1
+            secconds = 59
+
+        else:
+            print('Timer Done!')
+            return
+
+        time_to_disp = int_to_time(minutes) + ':' + int_to_time(secconds)
+
+        display_time(time_to_disp)
+        time.sleep(1)
 
 
 
 
+
+def int_to_time(int_time):
+
+    if int_time < 10:
+        str_time = '0' + str(int_time)
+
+    else:
+        str_time = str(int_time)
+
+    return str_time
+
+
+
+#TODO: make cursor blink go away
+#TODO: time and make sure 25 mins ~= 25 mins (within a few secconds)
+
+#TODO: Fix display screen 
