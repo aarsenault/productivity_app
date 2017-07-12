@@ -1,5 +1,7 @@
 import os
 import time
+import cursor_hide
+
 
 
 def clear():
@@ -172,6 +174,9 @@ def countdown(mins):
     if ld >= 3:
         hours = digits[ld - 3]
 
+    # turn cursor off before displaying time
+    # TODO: cursor needs to be tweaked for cross platform
+    cursor_hide.hide()
 
     # countdown
     while True:
@@ -184,9 +189,13 @@ def countdown(mins):
 
         else:
             print('Timer Done!')
+
+            # turn cursor back on
+            cursor_hide.show()
             return
 
         time_to_disp = int_to_time(minutes) + ':' + int_to_time(secconds)
+
 
         display_time(time_to_disp)
         time.sleep(1)
@@ -210,4 +219,7 @@ def int_to_time(int_time):
 #TODO: make cursor blink go away
 #TODO: time and make sure 25 mins ~= 25 mins (within a few secconds)
 
-#TODO: Fix display screen 
+#TODO: Fix display screen
+
+
+countdown(2)
