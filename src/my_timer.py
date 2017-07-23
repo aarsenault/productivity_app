@@ -156,10 +156,6 @@ def digitmaker(time):
     return digits
 
 
-
-
-
-
 # for now focus on minutes and secconds
 def countdown(mins):
 
@@ -221,5 +217,3 @@ def int_to_time(int_time):
 
 #TODO: Fix display screen
 
-
-countdown(2)

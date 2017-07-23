@@ -4,6 +4,8 @@ import time
 import datetime
 import tkinter
 from tkinter import messagebox
+import my_timer
+
 
 # hide main window
 root = tkinter.Tk()
@@ -68,7 +70,7 @@ def work_block():
 
     start_sequence()
 
-    time.sleep(1)
+    my_timer.countdown(1)
     print("")
 
     # messagebox.showinfo("Title", "a Tk MessageBox")
@@ -79,7 +81,7 @@ def work_block():
     os.system('afplay /System/Library/Sounds/Glass.aiff')
 
 
-
+# Counts down and chimes before a sequence starts
 def start_sequence():
     print( " starting in: ")
     for i in range(3):
