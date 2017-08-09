@@ -1,5 +1,4 @@
 
-
 class User(object):
 
     def __init__(self, name, total_work):
